@@ -280,6 +280,8 @@ int main (int argc, char *argv[]) {
 Related marco and function
 
 ```C
+// pthread_mutex_practice.c
+
 // default static mutex lock initializer
 // For example: static pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 PTHREAD_MUTEX_INITIALIZER 
@@ -314,7 +316,8 @@ DeadLock
 Related marco and function
 
 ```C
-// you would understand
+// pthread_rwlock.c
+
 PTHREAD_RWLOCK_INITIALIZER
 
 int pthread_rwlock_init(pthread_rwlock_t *restrict rwlock, 
@@ -402,6 +405,8 @@ Extend of `pthread_join`; Volatile + loop could do the same thing but....
 Related marco and function
 
 ```C
+// pthread_cond.c
+
 PTHREAD_COND_INITIALIZER
 int pthread_cond_init(pthread_cond_t *restrict cond, 
                       const pthread_condattr_t *restrict attr);
@@ -474,6 +479,8 @@ Recall
 Related marco and function
 
 ```C
+// pthread_smi.c
+
 int sem_destroy(sem_t *sem);
 int sem_init(sem_t *sem, int pshared, unsigned int value);
 		
@@ -496,6 +503,8 @@ Banker's algorithm
 Related marco and function
 
 ```C
+// pthread_barrier.c
+
 int pthread_barrier_init(pthread_barrier_t *barrier, 
                          const pthread_barrierattr_t *restrict attr, 
                          unsigned count);
@@ -507,3 +516,26 @@ Milestone
 
 compare with `pthread_condition` `pthread_join` 
 
+
+
+#### Thread Pool
+
+For huge amount and high frequency jobs.
+
+producer - consumer model
+
+- mutex
+- producer don't produce when full
+- consumer don't consume when empty
+
+Work queue -> heavy load
+
+---
+
+### Reference
+
+https://casatwy.com/pthreadde-ge-chong-tong-bu-ji-zhi.html
+
+https://blog.csdn.net/liujiaoyage/article/details/37722649
+
+https://blog.csdn.net/gatieme/article/details/51481863
