@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "*.wpy": "vue",
+    "__mutex_base": "c",
+    "condition_variable": "c"
+  }
+}
